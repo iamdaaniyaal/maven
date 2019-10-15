@@ -30,7 +30,7 @@ resource "google_compute_instance" "maven" {
 
   network_interface {
     network    = "${var.sonarvpc}"
-    subnetwork = "${var.sonarsub)"
+    subnetwork = "${var.sonarsub}"
     access_config {
       // Ephemeral IP
       nat_ip = "${google_compute_address.mavenip.address}"
@@ -40,5 +40,5 @@ resource "google_compute_instance" "maven" {
     name = "maven"
   }
 
-  metadata_startup_script = "sudo yum update -y;sudo yum install git -y; sudo git clone https://github.com/iamdaaniyaal/devops.git; sudo chmod 777 /devops/*; sudo sh maven.sh;"
+  metadata_startup_script = "sudo yum update -y; sudo yum install git -y; sudo git clone https://github.com/iamdaaniyaal/maven.git; cd /; cd maven; sudo chmod 777 /maven/*; sudo sh maven.sh"
 }
