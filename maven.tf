@@ -6,8 +6,8 @@ provider "google" {
 
 //Maven Instance
 resource "google_compute_address" "mavenip" {
-  name   = "mavenip"
-  region = "us-east1"
+  name   = "${var.maven_instance_ip_name}"
+  region = "${var.maven_instance_ip_region}"
 }
 
 
