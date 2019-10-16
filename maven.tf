@@ -12,7 +12,7 @@ resource "google_compute_address" "mavenip" {
 
 
 resource "google_compute_instance" "maven" {
-  name         = "maven-instance"
+  name         = "${var.instance_name}"
   machine_type = "n1-standard-1"
   zone         = "us-east1-b"
 
